@@ -1,0 +1,837 @@
+/*
+ Theme Name:   Bridgeland Custom Theme
+ Theme URI:    http://www.bridgeland.com
+ Description:  Custom Theme for Bridgeland
+ Author:       John Manlove Marketing and Communications
+ Template:     responsive
+ Version:      1.0.0
+*/
+
+//mixins
+@mixin bg-img($img, $img-type, $repeat) {
+	background: url('/Bridgeland/wp-content/uploads/2015/09/bg_' + $img + '.' + $img-type + '') 0 0 $repeat;
+}
+
+@mixin btn-img($img, $img-type, $repeat) {
+	background: url('/Bridgeland/wp-content/uploads/2015/09/btn_' + $img + '.' + $img-type + '') 0 0 $repeat;
+}
+
+@mixin icon-img($img, $img-type, $repeat) {
+	background: url('/Bridgeland/wp-content/uploads/2015/09/ico_' + $img + '.' + $img-type + '') 0 0 $repeat;
+}
+
+//VARIABLES
+
+//colors
+$text-color: #414042;
+$green: #9E9B5B;
+$yellow: #e9cf8f;
+$brown: #8F6F5A;
+
+
+
+//fonts
+$font-stack: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+
+//elements
+$white-border: 2px solid white;
+$google-map-height: 400px;
+
+
+/* ===================================================================================
+GENERAL STYLES
+=================================================================================== */
+
+* {
+    box-sizing: border-box;
+    color: $text-color;
+}
+
+body {
+	@include bg-img(blog, png, repeat);
+	background-color: $green;
+}
+
+form div {
+	margin-bottom: 0;
+}
+
+
+/* ===================================================================================
+TYPOGRAPHY STYLES
+=================================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-stack;
+	font-weight: normal !important;
+}
+
+
+
+/* ===================================================================================
+NAVIGATION STYLES
+=================================================================================== */
+
+.main-nav {
+
+	.menu {
+		li {
+			a {
+				-webkit-transition: color 0.3s;
+				   -moz-transition: color 0.3s;
+					    transition: color 0.3s;
+					    text-shadow: 0 0 white;
+					    z-index: 100;
+
+				&::before {
+					position: absolute;
+					top: 40%;
+					left: 50%;
+					color: transparent;
+					content: '•';
+					text-shadow: 0 0 transparent;
+					font-size: 1.2em;
+					-webkit-transition: text-shadow 0.3s, color 0.3s;
+					   -moz-transition: text-shadow 0.3s, color 0.3s;
+						    transition: text-shadow 0.3s, color 0.3s;
+					-webkit-transform: translateX(-50%);
+					   -moz-transform: translateX(-50%);
+						    transform: translateX(-50%);
+					pointer-events: none;
+				}
+			}
+
+			ul {
+				background: white;
+
+				> li {
+					margin: 0;
+
+					a {
+						display: block;
+						height: 100%;
+						padding: 7px 0 7px 10px;
+						text-shadow: 0 0 #444;
+						width: 100%;
+
+						&::before {
+							content: '' !important;
+						}
+					}
+				}
+			}
+		}
+
+		li.current_page_item, .current_page_ancestor {
+			a {
+
+				&::before {
+					position: absolute;
+					top: 40%;
+					left: 50%;
+					color: white;
+					content: '•';
+					text-shadow: 0 0 transparent;
+					font-size: 1.2em;
+				}
+			}
+		}
+	}
+}
+
+
+.main-nav .menu li a:hover::before,
+.main-nav .menu li a:focus::before {
+	color: #fff;
+	text-shadow: 10px 0 #fff, -10px 0 #fff;
+}
+
+/* ===================================================================================
+BREADCRUMB NAV STYLES
+=================================================================================== */
+
+.breadcrumb-list {
+	.breadcrumb {
+
+		a {
+			color: $brown;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&::after {
+			content: '/';
+			margin: 0px 2px 0 4px;
+		}
+	}
+	.chevron {
+		display: none;
+	}
+}
+
+/* ===================================================================================
+SIDEBAR NAV STYLES
+=================================================================================== */
+
+.widget_advanced_menu {
+
+	#menu-internal-navigation {
+		list-style: none;
+		margin: 0;
+
+		li {
+			border-bottom: 1px solid $brown;
+
+			a {
+				color: $brown;
+				display: block;
+				font-family: $font-stack;
+				font-size: 17px;
+				padding: 5px 0 5px 10px;
+				height: 100%;
+				transition: background-color 500ms;
+				text-shadow: 0 0 $brown;
+				width: 100%;
+
+				&:hover {
+					background: #f5f5f5;
+				}
+			}
+
+			&:first-of-type {
+				border-top: 1px solid $brown;
+			}
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+				li {
+					border-bottom: 0 none;
+					
+					a {
+						font-size: 14px;
+						padding-left: 20px;
+					}
+				}
+			}
+		}
+
+		/*.current_page_item {
+			a {
+				background: #f5f5f5;
+			}
+		}*/
+	}
+}
+
+/* ===================================================================================
+HOMEPAGE STYLES
+=================================================================================== */
+
+.home {
+	#wrapper {
+		border: 0 none;
+		border-radius: 0;
+		margin: 67px auto 0;
+		padding: 0px 0px;
+
+		#content-full {
+			margin-bottom: 0;
+			margin-top: 0;
+
+			.post-edit {
+				margin: 0;
+			}
+
+			#rev_slider_1_1_wrapper {
+				@include bg-img(banner, jpg, no-repeat);
+			}
+
+			.su-row {
+				border-bottom: $white-border;
+				margin-bottom: 0;
+
+				.su-column {
+					//border: 1px solid #000;
+					margin: 0;
+
+				}
+				.su-column-size-1-5 {
+					width: 20.8%;
+				}
+
+				.su-column-size-2-5 {
+					width: 41.6%;
+				}
+
+				.bucket-links {
+					padding: 0 0 0 20px;
+
+					ul {
+						list-style: none;
+			            margin: 0;
+			            padding: 0;
+			            width: 100%;
+
+			            li {
+			            	display: inline-block;
+			                float: left;
+			                height: 219px;
+			                margin-bottom: 20px;
+			                margin-right: 20px;
+			                vertical-align: middle;
+			                width: 220px;
+
+
+			                a {
+			                	color: #fff;
+			                    display: inline-block;
+			                    font-family: $font-stack;
+			                    font-size: 28px;
+			                    font-weight: normal;
+			                    height: 100%;
+			                    line-height: 35px;
+			                    padding-top: 90px;
+			                    text-align: center;
+			                    text-decoration: none;
+			                    text-transform: uppercase;
+			                    width: 100%;
+			                }
+			            }
+
+			            .multi {
+
+			            	a {
+			            		padding-top: 73px;
+			            	}
+			            }
+
+				        #bucket-hidden {
+			                @include bg-img(hiddencreek, jpg, no-repeat);
+			            }
+			            #bucket-lakeland {
+			            	@include bg-img(lakeland, jpg, no-repeat);
+			            }
+			            #bucket-welcome {
+			            	@include bg-img(welcome, jpg, no-repeat);
+			            }
+			            #bucket-amenities {
+			            	@include bg-img(amenities, jpg, no-repeat);
+			            }
+			            #bucket-builders {
+			            	@include bg-img(builders, jpg, no-repeat);
+			            }
+			            #bucket-education {
+			            	@include bg-img(education, jpg, no-repeat);
+			            }
+			            #bucket-maps {
+			            	@include bg-img(maps, jpg, no-repeat);
+			            }
+			            #bucket-events {
+			            	@include bg-img(events, jpg, no-repeat);
+			            }
+
+					}
+				}
+			}
+
+			.su-row.buckets {
+				border-bottom: 0 none;
+				padding-top: 20px;
+			}
+
+			.our-homes {
+				background: $yellow;
+				overflow: hidden;
+
+				.su-column-size-3-5 {
+					margin-bottom: -100em;
+					padding: 30px 30px 102em;
+
+					> .su-column-inner {
+						margin-left: -1500px;
+						margin-right: 1500px;
+						transition: all 1500ms;
+					}
+				}
+
+				.su-column-size-2-5 {
+					@include bg-img(our-homes, jpg, no-repeat);
+					background-size: 100%;
+
+					.su-column-inner {
+						float: right;
+						text-align: center;
+						width: 50%;
+
+						img {
+							margin-bottom: 30px;
+							margin-left: 1500px;
+							margin-right: -1500px;
+							margin-top: 30px;
+							max-width: 80%;
+							transition: all 1500ms;
+						}
+					}
+				}
+			}
+
+			.our-homes.inview {
+				.su-column-inner {
+					margin-left: 0;
+					margin-right: 0;
+
+					img {
+						margin-left: 0;
+						margin-right: 0;
+					}
+				}
+			}
+
+			.our-lifestyle {
+				background: $green;
+				overflow: hidden;
+
+				.su-column-size-3-5 {
+					margin-bottom: -100em;
+					padding: 30px 30px 102em;
+
+					> .su-column-inner {
+						margin-left: -1500px;
+						margin-right: 1500px;
+						transition: all 2000ms;
+					}
+				}
+
+				.su-column-size-2-5 {
+					@include bg-img(our-lifestyle, jpg, no-repeat);
+					background-size: 100%;
+
+					.su-column-inner {
+						float: right;
+						text-align: center;
+						width: 50%;
+
+						img {
+							margin-bottom: 60px;
+							margin-left: 1500px;
+							margin-right: -1500px;
+							margin-top: 120px;
+							max-width: 80%;
+							transition: all 2000ms;
+						}
+					}
+				}
+			}
+
+			.our-lifestyle.inview {
+				.su-column-inner {
+					margin-left: 0;
+					margin-right: 0;
+
+					img {
+						margin-left: 0;
+						margin-right: 0;
+					}
+				}
+			}
+
+			.google-map {
+				height: $google-map-height;
+				position: relative;
+				width: 100%;
+
+				> div {
+					height: 100%;
+
+					> div {
+						height: 100%;
+
+						p {
+							height: 100%;
+							margin: 0;
+						}
+
+						.overlay {
+							background:transparent; 
+					        position: absolute; 
+					        width:100%;
+					        height:$google-map-height;
+					        top:$google-map-height;
+					        margin-top:-$google-map-height;
+					    }
+
+						iframe {
+							left: 0;
+							height: 100%;
+							min-height: 0 !important;
+							top: 0;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ===================================================================================
+LAYOUT STYLES
+=================================================================================== */
+
+#container {
+	padding: 0;
+	max-width: 1240px;
+
+	.skip-container {
+		padding: 0 .5em 0 0;
+	}
+
+	#header {
+		background: url(/Bridgeland/wp-content/uploads/2015/09/bg_header.png) 0 0 repeat-x;
+		border-bottom: $white-border;
+		left: 0;
+		padding: 10px 20px;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 900;
+
+		.head-container {
+			margin: 0 auto;
+			padding: 0 30px;
+			width: 1240px;
+
+			#logo {
+
+				a {
+
+					img {
+						width: 75%;
+					}
+				}
+			}
+
+			.main-nav {
+				clear: none;
+				float: right;
+
+				
+				.menu {
+					background: none;
+
+
+					li {
+
+						a {
+							background: none;
+							border-left: none;
+							font-family: $font-stack;
+							font-size: 15px;
+
+						}
+
+						&:hover {
+							background: transparent !important;
+						}
+						
+						&:last-child {
+							a {
+								background: url(/Bridgeland/wp-content/uploads/2015/09/mag_glass.png) 100% 10px no-repeat;
+								border-left: 1px solid #fff;
+								width: 110%;
+							}
+						}
+
+						li {
+							a {
+								width: 100% !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.newsletter, .col-300 {
+	padding: 0 20px 0px 0px;
+
+	#constant-contact-signup-1 {
+		@include bg-img(blog, png, repeat);
+		border-radius: 0;
+		margin: 0;
+		padding: 13px;
+		text-align: center;
+
+		.gform_fields {
+			border: 1px solid white;
+			padding: 15px;
+		}
+
+		img {
+			margin: 5px 0 15px 0;
+		}
+
+		p {
+			color: white;
+			margin: 0 !important;
+		}
+
+		.success {
+			background: none !important;
+			border: 0 none !important;
+		}
+
+		.form-text {
+			margin: 20px 0 25px !important;
+		}
+
+		h2 {
+			border-bottom: 1px dashed #fff;
+		    border-top: 1px dashed #fff;
+		    color: #fff;
+		    font-size: 13px;
+		    font-weight: 900 !important;
+		    line-height: 20px;
+		    margin: 10px 0 10px;
+		    padding: 10px 0;
+		    text-align: center;
+		    text-transform: uppercase;
+		}
+
+		input[type="text"] {
+			    border: 0 none;
+			    border-radius: 0;
+			    color: #939598;
+			    font-family:$font-stack;
+			    font-size: 13px;
+			    margin-bottom: 15px;
+			    outline: 0;
+			    padding: 7px 5%;
+			    width: 100%;
+		}
+
+		label {
+			margin-bottom: 20px;
+
+			input[type="submit"] {
+				@include btn-img(subscribe, png, no-repeat);
+				border: 0;
+				font-size: 0;
+				height: 37px;
+				transition: all 500ms;
+				width: 150px;
+
+				&:hover {
+					opacity: .8;
+				}
+			}
+		}
+	}
+}
+
+/* ===================================================================================
+INTERNAL PAGE STYLES
+=================================================================================== */
+
+#wrapper {
+	padding: 0px 0px 20px 0px !important;
+
+	#banner-img {
+		background-size: 100%;
+		height: 299px;
+	}
+
+	#content.col-620 {
+		padding-left: 30px;
+	}
+
+	#widgets.fit {
+		padding-right: 10px;
+
+		> div:first-of-type {
+			margin-top: 0;
+		}
+	}
+}
+
+.widget-wrapper {
+	background: none;
+	border: 0 none;
+}
+
+.su-slider-pagination {
+	top: 95% !important;
+}
+
+iframe {
+	min-height: 900px;
+	width: 100%;
+}
+
+.su-tabs {
+	background: none !important;
+	border: 1px solid $brown;
+	border-radius: 0 !important;
+	padding: 0 !important;
+
+	.su-tabs-nav {
+		background: $brown;
+		float: none !important;
+		padding: 15px 20px;
+		width: 100% !important;
+
+		span {
+			color: white;
+			display: inline-block !important;
+			font-family: $font-stack;
+			font-size: 14px;
+			font-weight: 900;
+			text-transform: uppercase;
+			transition: opacity 400ms;
+			width: 50%;
+
+			&.su-tabs-current {
+				background: none;
+				opacity: .8;
+			}
+
+			&::before {
+				content: '•';
+				margin-right: 10px;
+			}
+
+			&:hover {
+				background: none;
+				border-radius: 0;
+				opacity: .7;
+			}
+		}
+	}
+
+	.su-tabs-panes {
+		float: none !important;
+		width: 100% !important;
+	}
+}
+
+/* ===================================================================================
+FOOTER STYLES
+=================================================================================== */
+
+#footer {
+	max-width: 1240px;
+	padding: 0;
+
+	#footer-social {
+		@include bg-img(social, png, repeat);
+		padding: 30px 50px;
+
+		.logo {
+			float: left;
+		}
+
+		.social-links {
+			list-style: none;
+			float: right;
+
+
+			ul {
+				margin-bottom: 0;
+
+
+				li {
+					display: inline-block;
+					height: 35px;
+					margin-left: 15px;
+					width: 35px;
+
+
+					a {
+						background-size: 100% !important;
+						display: block;
+						height: 100%;
+						outline: none;
+						overflow: hidden;
+						text-indent: 100%;
+						transition: all 500ms;
+						width: 100%;
+						white-space: nowrap;
+
+
+						&:hover {
+							opacity: .9;
+						}
+					}
+
+					#facebook {
+						@include icon-img(facebook, png, no-repeat);
+					}
+					#twitter {
+						@include icon-img(twitter, png, no-repeat);
+					}
+					#linkedin {
+						@include icon-img(linkedin, png, no-repeat);
+					}
+					#youtube {
+						@include icon-img(youtube, png, no-repeat);
+					}
+					#instagram {
+						@include icon-img(instagram, png, no-repeat);
+					}
+					#googleplus {
+						@include icon-img(googleplus, png, no-repeat);
+					}
+					#pinterest {
+						@include icon-img(pinterest, png, no-repeat);
+					}
+					#maps {
+						@include icon-img(maps, png, no-repeat);
+					}
+
+				}
+			}
+		}
+	}
+
+	#footer-wrapper {
+		background: $green;
+
+		#text-3 {
+			text-align: center;
+
+
+			img {
+				max-width: 60%;
+			}
+		}
+
+		.widget-wrapper {
+			background: none;
+			border: 0 none;
+
+			.widget-title {
+				display: none;
+			}
+
+			p, a {
+				color: white;
+			}
+
+			a {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+
+
+
+

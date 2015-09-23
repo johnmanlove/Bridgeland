@@ -1,0 +1,509 @@
+@charset "UTF-8";
+/*
+ Theme Name:   Bridgeland Custom Theme
+ Theme URI:    http://www.bridgeland.com
+ Description:  Custom Theme for Bridgeland
+ Author:       John Manlove Marketing and Communications
+ Template:     responsive
+ Version:      1.0.0
+*/
+/* ===================================================================================
+GENERAL STYLES
+=================================================================================== */
+* {
+  box-sizing: border-box;
+  color: #414042; }
+
+body {
+  background: url("/Bridgeland/wp-content/uploads/2015/09/bg_blog.png") 0 0 repeat;
+  background-color: #9E9B5B; }
+
+form div {
+  margin-bottom: 0; }
+
+/* ===================================================================================
+TYPOGRAPHY STYLES
+=================================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: normal !important; }
+
+/* ===================================================================================
+NAVIGATION STYLES
+=================================================================================== */
+.main-nav .menu li a {
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+  text-shadow: 0 0 white;
+  z-index: 100; }
+  .main-nav .menu li a::before {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    color: transparent;
+    content: '•';
+    text-shadow: 0 0 transparent;
+    font-size: 1.2em;
+    -webkit-transition: text-shadow 0.3s, color 0.3s;
+    -moz-transition: text-shadow 0.3s, color 0.3s;
+    transition: text-shadow 0.3s, color 0.3s;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+    pointer-events: none; }
+.main-nav .menu li ul {
+  background: white; }
+  .main-nav .menu li ul > li {
+    margin: 0; }
+    .main-nav .menu li ul > li a {
+      display: block;
+      height: 100%;
+      padding: 7px 0 7px 10px;
+      text-shadow: 0 0 #444;
+      width: 100%; }
+      .main-nav .menu li ul > li a::before {
+        content: '' !important; }
+.main-nav .menu li.current_page_item a::before, .main-nav .menu .current_page_ancestor a::before {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: white;
+  content: '•';
+  text-shadow: 0 0 transparent;
+  font-size: 1.2em; }
+
+.main-nav .menu li a:hover::before,
+.main-nav .menu li a:focus::before {
+  color: #fff;
+  text-shadow: 10px 0 #fff, -10px 0 #fff; }
+
+/* ===================================================================================
+BREADCRUMB NAV STYLES
+=================================================================================== */
+.breadcrumb-list .breadcrumb a {
+  color: #8F6F5A; }
+  .breadcrumb-list .breadcrumb a:hover {
+    text-decoration: underline; }
+.breadcrumb-list .breadcrumb::after {
+  content: '/';
+  margin: 0px 2px 0 4px; }
+.breadcrumb-list .chevron {
+  display: none; }
+
+/* ===================================================================================
+SIDEBAR NAV STYLES
+=================================================================================== */
+.widget_advanced_menu #menu-internal-navigation {
+  list-style: none;
+  margin: 0;
+  /*.current_page_item {
+  	a {
+  		background: #f5f5f5;
+  	}
+  }*/ }
+  .widget_advanced_menu #menu-internal-navigation li {
+    border-bottom: 1px solid #8F6F5A; }
+    .widget_advanced_menu #menu-internal-navigation li a {
+      color: #8F6F5A;
+      display: block;
+      font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+      font-size: 17px;
+      padding: 5px 0 5px 10px;
+      height: 100%;
+      transition: background-color 500ms;
+      text-shadow: 0 0 #8F6F5A;
+      width: 100%; }
+      .widget_advanced_menu #menu-internal-navigation li a:hover {
+        background: #f5f5f5; }
+    .widget_advanced_menu #menu-internal-navigation li:first-of-type {
+      border-top: 1px solid #8F6F5A; }
+    .widget_advanced_menu #menu-internal-navigation li ul {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      .widget_advanced_menu #menu-internal-navigation li ul li {
+        border-bottom: 0 none; }
+        .widget_advanced_menu #menu-internal-navigation li ul li a {
+          font-size: 14px;
+          padding-left: 20px; }
+
+/* ===================================================================================
+HOMEPAGE STYLES
+=================================================================================== */
+.home #wrapper {
+  border: 0 none;
+  border-radius: 0;
+  margin: 67px auto 0;
+  padding: 0px 0px; }
+  .home #wrapper #content-full {
+    margin-bottom: 0;
+    margin-top: 0; }
+    .home #wrapper #content-full .post-edit {
+      margin: 0; }
+    .home #wrapper #content-full #rev_slider_1_1_wrapper {
+      background: url("/Bridgeland/wp-content/uploads/2015/09/bg_banner.jpg") 0 0 no-repeat; }
+    .home #wrapper #content-full .su-row {
+      border-bottom: 2px solid white;
+      margin-bottom: 0; }
+      .home #wrapper #content-full .su-row .su-column {
+        margin: 0; }
+      .home #wrapper #content-full .su-row .su-column-size-1-5 {
+        width: 20.8%; }
+      .home #wrapper #content-full .su-row .su-column-size-2-5 {
+        width: 41.6%; }
+      .home #wrapper #content-full .su-row .bucket-links {
+        padding: 0 0 0 20px; }
+        .home #wrapper #content-full .su-row .bucket-links ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          width: 100%; }
+          .home #wrapper #content-full .su-row .bucket-links ul li {
+            display: inline-block;
+            float: left;
+            height: 219px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            vertical-align: middle;
+            width: 220px; }
+            .home #wrapper #content-full .su-row .bucket-links ul li a {
+              color: #fff;
+              display: inline-block;
+              font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+              font-size: 28px;
+              font-weight: normal;
+              height: 100%;
+              line-height: 35px;
+              padding-top: 90px;
+              text-align: center;
+              text-decoration: none;
+              text-transform: uppercase;
+              width: 100%; }
+          .home #wrapper #content-full .su-row .bucket-links ul .multi a {
+            padding-top: 73px; }
+          .home #wrapper #content-full .su-row .bucket-links ul #bucket-hidden {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/bg_hiddencreek.jpg") 0 0 no-repeat; }
+          .home #wrapper #content-full .su-row .bucket-links ul #bucket-lakeland {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/bg_lakeland.jpg") 0 0 no-repeat; }
+          .home #wrapper #content-full .su-row .bucket-links ul #bucket-welcome {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/bg_welcome.jpg") 0 0 no-repeat; }
+          .home #wrapper #content-full .su-row .bucket-links ul #bucket-amenities {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/bg_amenities.jpg") 0 0 no-repeat; }
+          .home #wrapper #content-full .su-row .bucket-links ul #bucket-builders {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/bg_builders.jpg") 0 0 no-repeat; }
+          .home #wrapper #content-full .su-row .bucket-links ul #bucket-education {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/bg_education.jpg") 0 0 no-repeat; }
+          .home #wrapper #content-full .su-row .bucket-links ul #bucket-maps {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/bg_maps.jpg") 0 0 no-repeat; }
+          .home #wrapper #content-full .su-row .bucket-links ul #bucket-events {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/bg_events.jpg") 0 0 no-repeat; }
+    .home #wrapper #content-full .su-row.buckets {
+      border-bottom: 0 none;
+      padding-top: 20px; }
+    .home #wrapper #content-full .our-homes {
+      background: #e9cf8f;
+      overflow: hidden; }
+      .home #wrapper #content-full .our-homes .su-column-size-3-5 {
+        margin-bottom: -100em;
+        padding: 30px 30px 102em; }
+        .home #wrapper #content-full .our-homes .su-column-size-3-5 > .su-column-inner {
+          margin-left: -1500px;
+          margin-right: 1500px;
+          transition: all 1500ms; }
+      .home #wrapper #content-full .our-homes .su-column-size-2-5 {
+        background: url("/Bridgeland/wp-content/uploads/2015/09/bg_our-homes.jpg") 0 0 no-repeat;
+        background-size: 100%; }
+        .home #wrapper #content-full .our-homes .su-column-size-2-5 .su-column-inner {
+          float: right;
+          text-align: center;
+          width: 50%; }
+          .home #wrapper #content-full .our-homes .su-column-size-2-5 .su-column-inner img {
+            margin-bottom: 30px;
+            margin-left: 1500px;
+            margin-right: -1500px;
+            margin-top: 30px;
+            max-width: 80%;
+            transition: all 1500ms; }
+    .home #wrapper #content-full .our-homes.inview .su-column-inner {
+      margin-left: 0;
+      margin-right: 0; }
+      .home #wrapper #content-full .our-homes.inview .su-column-inner img {
+        margin-left: 0;
+        margin-right: 0; }
+    .home #wrapper #content-full .our-lifestyle {
+      background: #9E9B5B;
+      overflow: hidden; }
+      .home #wrapper #content-full .our-lifestyle .su-column-size-3-5 {
+        margin-bottom: -100em;
+        padding: 30px 30px 102em; }
+        .home #wrapper #content-full .our-lifestyle .su-column-size-3-5 > .su-column-inner {
+          margin-left: -1500px;
+          margin-right: 1500px;
+          transition: all 2000ms; }
+      .home #wrapper #content-full .our-lifestyle .su-column-size-2-5 {
+        background: url("/Bridgeland/wp-content/uploads/2015/09/bg_our-lifestyle.jpg") 0 0 no-repeat;
+        background-size: 100%; }
+        .home #wrapper #content-full .our-lifestyle .su-column-size-2-5 .su-column-inner {
+          float: right;
+          text-align: center;
+          width: 50%; }
+          .home #wrapper #content-full .our-lifestyle .su-column-size-2-5 .su-column-inner img {
+            margin-bottom: 60px;
+            margin-left: 1500px;
+            margin-right: -1500px;
+            margin-top: 120px;
+            max-width: 80%;
+            transition: all 2000ms; }
+    .home #wrapper #content-full .our-lifestyle.inview .su-column-inner {
+      margin-left: 0;
+      margin-right: 0; }
+      .home #wrapper #content-full .our-lifestyle.inview .su-column-inner img {
+        margin-left: 0;
+        margin-right: 0; }
+    .home #wrapper #content-full .google-map {
+      height: 400px;
+      position: relative;
+      width: 100%; }
+      .home #wrapper #content-full .google-map > div {
+        height: 100%; }
+        .home #wrapper #content-full .google-map > div > div {
+          height: 100%; }
+          .home #wrapper #content-full .google-map > div > div p {
+            height: 100%;
+            margin: 0; }
+          .home #wrapper #content-full .google-map > div > div .overlay {
+            background: transparent;
+            position: absolute;
+            width: 100%;
+            height: 400px;
+            top: 400px;
+            margin-top: -400px; }
+          .home #wrapper #content-full .google-map > div > div iframe {
+            left: 0;
+            height: 100%;
+            min-height: 0 !important;
+            top: 0;
+            width: 100%; }
+
+/* ===================================================================================
+LAYOUT STYLES
+=================================================================================== */
+#container {
+  padding: 0;
+  max-width: 1240px; }
+  #container .skip-container {
+    padding: 0 .5em 0 0; }
+  #container #header {
+    background: url(/Bridgeland/wp-content/uploads/2015/09/bg_header.png) 0 0 repeat-x;
+    border-bottom: 2px solid white;
+    left: 0;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 900; }
+    #container #header .head-container {
+      margin: 0 auto;
+      padding: 0 30px;
+      width: 1240px; }
+      #container #header .head-container #logo a img {
+        width: 75%; }
+      #container #header .head-container .main-nav {
+        clear: none;
+        float: right; }
+        #container #header .head-container .main-nav .menu {
+          background: none; }
+          #container #header .head-container .main-nav .menu li a {
+            background: none;
+            border-left: none;
+            font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+            font-size: 15px; }
+          #container #header .head-container .main-nav .menu li:hover {
+            background: transparent !important; }
+          #container #header .head-container .main-nav .menu li:last-child a {
+            background: url(/Bridgeland/wp-content/uploads/2015/09/mag_glass.png) 100% 10px no-repeat;
+            border-left: 1px solid #fff;
+            width: 110%; }
+          #container #header .head-container .main-nav .menu li li a {
+            width: 100% !important; }
+
+.newsletter, .col-300 {
+  padding: 0 20px 0px 0px; }
+  .newsletter #constant-contact-signup-1, .col-300 #constant-contact-signup-1 {
+    background: url("/Bridgeland/wp-content/uploads/2015/09/bg_blog.png") 0 0 repeat;
+    border-radius: 0;
+    margin: 0;
+    padding: 13px;
+    text-align: center; }
+    .newsletter #constant-contact-signup-1 .gform_fields, .col-300 #constant-contact-signup-1 .gform_fields {
+      border: 1px solid white;
+      padding: 15px; }
+    .newsletter #constant-contact-signup-1 img, .col-300 #constant-contact-signup-1 img {
+      margin: 5px 0 15px 0; }
+    .newsletter #constant-contact-signup-1 p, .col-300 #constant-contact-signup-1 p {
+      color: white;
+      margin: 0 !important; }
+    .newsletter #constant-contact-signup-1 .success, .col-300 #constant-contact-signup-1 .success {
+      background: none !important;
+      border: 0 none !important; }
+    .newsletter #constant-contact-signup-1 .form-text, .col-300 #constant-contact-signup-1 .form-text {
+      margin: 20px 0 25px !important; }
+    .newsletter #constant-contact-signup-1 h2, .col-300 #constant-contact-signup-1 h2 {
+      border-bottom: 1px dashed #fff;
+      border-top: 1px dashed #fff;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900 !important;
+      line-height: 20px;
+      margin: 10px 0 10px;
+      padding: 10px 0;
+      text-align: center;
+      text-transform: uppercase; }
+    .newsletter #constant-contact-signup-1 input[type="text"], .col-300 #constant-contact-signup-1 input[type="text"] {
+      border: 0 none;
+      border-radius: 0;
+      color: #939598;
+      font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+      font-size: 13px;
+      margin-bottom: 15px;
+      outline: 0;
+      padding: 7px 5%;
+      width: 100%; }
+    .newsletter #constant-contact-signup-1 label, .col-300 #constant-contact-signup-1 label {
+      margin-bottom: 20px; }
+      .newsletter #constant-contact-signup-1 label input[type="submit"], .col-300 #constant-contact-signup-1 label input[type="submit"] {
+        background: url("/Bridgeland/wp-content/uploads/2015/09/btn_subscribe.png") 0 0 no-repeat;
+        border: 0;
+        font-size: 0;
+        height: 37px;
+        transition: all 500ms;
+        width: 150px; }
+        .newsletter #constant-contact-signup-1 label input[type="submit"]:hover, .col-300 #constant-contact-signup-1 label input[type="submit"]:hover {
+          opacity: .8; }
+
+/* ===================================================================================
+INTERNAL PAGE STYLES
+=================================================================================== */
+#wrapper {
+  padding: 0px 0px 20px 0px !important; }
+  #wrapper #banner-img {
+    background-size: 100%;
+    height: 299px; }
+  #wrapper #content.col-620 {
+    padding-left: 30px; }
+  #wrapper #widgets.fit {
+    padding-right: 10px; }
+    #wrapper #widgets.fit > div:first-of-type {
+      margin-top: 0; }
+
+.widget-wrapper {
+  background: none;
+  border: 0 none; }
+
+.su-slider-pagination {
+  top: 95% !important; }
+
+iframe {
+  min-height: 900px;
+  width: 100%; }
+
+.su-tabs {
+  background: none !important;
+  border: 1px solid #8F6F5A;
+  border-radius: 0 !important;
+  padding: 0 !important; }
+  .su-tabs .su-tabs-nav {
+    background: #8F6F5A;
+    float: none !important;
+    padding: 15px 20px;
+    width: 100% !important; }
+    .su-tabs .su-tabs-nav span {
+      color: white;
+      display: inline-block !important;
+      font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      transition: opacity 400ms;
+      width: 50%; }
+      .su-tabs .su-tabs-nav span.su-tabs-current {
+        background: none;
+        opacity: .8; }
+      .su-tabs .su-tabs-nav span::before {
+        content: '•';
+        margin-right: 10px; }
+      .su-tabs .su-tabs-nav span:hover {
+        background: none;
+        border-radius: 0;
+        opacity: .7; }
+  .su-tabs .su-tabs-panes {
+    float: none !important;
+    width: 100% !important; }
+
+/* ===================================================================================
+FOOTER STYLES
+=================================================================================== */
+#footer {
+  max-width: 1240px;
+  padding: 0; }
+  #footer #footer-social {
+    background: url("/Bridgeland/wp-content/uploads/2015/09/bg_social.png") 0 0 repeat;
+    padding: 30px 50px; }
+    #footer #footer-social .logo {
+      float: left; }
+    #footer #footer-social .social-links {
+      list-style: none;
+      float: right; }
+      #footer #footer-social .social-links ul {
+        margin-bottom: 0; }
+        #footer #footer-social .social-links ul li {
+          display: inline-block;
+          height: 35px;
+          margin-left: 15px;
+          width: 35px; }
+          #footer #footer-social .social-links ul li a {
+            background-size: 100% !important;
+            display: block;
+            height: 100%;
+            outline: none;
+            overflow: hidden;
+            text-indent: 100%;
+            transition: all 500ms;
+            width: 100%;
+            white-space: nowrap; }
+            #footer #footer-social .social-links ul li a:hover {
+              opacity: .9; }
+          #footer #footer-social .social-links ul li #facebook {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/ico_facebook.png") 0 0 no-repeat; }
+          #footer #footer-social .social-links ul li #twitter {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/ico_twitter.png") 0 0 no-repeat; }
+          #footer #footer-social .social-links ul li #linkedin {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/ico_linkedin.png") 0 0 no-repeat; }
+          #footer #footer-social .social-links ul li #youtube {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/ico_youtube.png") 0 0 no-repeat; }
+          #footer #footer-social .social-links ul li #instagram {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/ico_instagram.png") 0 0 no-repeat; }
+          #footer #footer-social .social-links ul li #googleplus {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/ico_googleplus.png") 0 0 no-repeat; }
+          #footer #footer-social .social-links ul li #pinterest {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/ico_pinterest.png") 0 0 no-repeat; }
+          #footer #footer-social .social-links ul li #maps {
+            background: url("/Bridgeland/wp-content/uploads/2015/09/ico_maps.png") 0 0 no-repeat; }
+  #footer #footer-wrapper {
+    background: #9E9B5B; }
+    #footer #footer-wrapper #text-3 {
+      text-align: center; }
+      #footer #footer-wrapper #text-3 img {
+        max-width: 60%; }
+    #footer #footer-wrapper .widget-wrapper {
+      background: none;
+      border: 0 none; }
+      #footer #footer-wrapper .widget-wrapper .widget-title {
+        display: none; }
+      #footer #footer-wrapper .widget-wrapper p, #footer #footer-wrapper .widget-wrapper a {
+        color: white; }
+      #footer #footer-wrapper .widget-wrapper a {
+        font-weight: bold; }
+
+/*# sourceMappingURL=style.css.map */
