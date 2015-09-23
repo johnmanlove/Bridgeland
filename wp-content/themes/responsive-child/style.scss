@@ -27,6 +27,7 @@ $text-color: #414042;
 $green: #9E9B5B;
 $yellow: #e9cf8f;
 $brown: #8F6F5A;
+$red: #b40000;
 
 
 
@@ -524,7 +525,6 @@ LAYOUT STYLES
 				.menu {
 					background: none;
 
-
 					li {
 
 						a {
@@ -718,6 +718,70 @@ iframe {
 	.su-tabs-panes {
 		float: none !important;
 		width: 100% !important;
+	}
+}
+
+/* ===================================================================================
+EVENTS STYLES
+=================================================================================== */
+
+.eme_events_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		border-bottom: 1px solid #eee;
+		padding: 15px 0;
+
+		span {
+			display: inline-block;
+		}
+
+		.date {
+			border: 1px solid #ddd;
+			font-family: $font-stack;
+			margin-right: 20px;
+			vertical-align: top;
+
+			.month {
+				background-color: $brown;
+				color: white;
+				display: block;
+				padding: 10px;
+				font-weight: bold;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			.day {
+				display: block;
+				text-align: center;
+				font-size: 25px;
+				padding: 10px 20px;
+			}
+
+		}
+		.location {
+			width: 80%;
+
+			h3, p {
+				font-size: 1em;
+				margin: 5px 0;
+			}
+
+			> a {
+				color: $green;
+				font-size: 1.8em;
+				font-family: $font-stack;
+				transition: color .3s;
+
+				&:hover {
+					color: $brown;
+				}
+			}
+		}
+
 	}
 }
 

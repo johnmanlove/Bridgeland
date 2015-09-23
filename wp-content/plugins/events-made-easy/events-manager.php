@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Events Made Easy
-Version: 1.5.46
+Version: 1.5.47
 Plugin URI: http://www.e-dynamics.be/wordpress
 Description: Manage and display events. Includes recurring events; locations; widgets; Google maps; RSVP; ICAL and RSS feeds; Paypal, 2Checkout and others. <a href="admin.php?page=eme-options">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SMGDS4GLCYWNG&lc=BE&item_name=To%20support%20development%20of%20EME&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted">Donate</a>
 Author: Franky Van Liedekerke
@@ -1105,8 +1105,7 @@ function eme_replace_notes_placeholders($format, $event="", $target="html") {
    return $format;
 }
 
-function eme_replace_placeholders($format, $event="", $target="html", $do_shortcode=1, $lang='') {
-   global $wp_query;
+function eme_replace_placeholders($format, $event, $target="html", $do_shortcode=1, $lang='') {
    global $eme_need_gmap_js, $eme_timezone;
 
    // an initial filter for the format, in case people want to change anything before the placeholders get replaced
@@ -1571,14 +1570,12 @@ function eme_replace_placeholders($format, $event="", $target="html", $do_shortc
 
       } elseif ($event && preg_match('/#_EVENTID/', $result)) {
          $field = "event_id";
-         $replacement = $event[$field];
-         if ($target == "html") {
-            $replacement = apply_filters('eme_general', $replacement); 
-         } elseif ($target == "rss")  {
-            $replacement = apply_filters('eme_general_rss', $replacement);
-         } else {
-            $replacement = apply_filters('eme_text', $replacement);
-         }
+         $replacement = intval($event[$field]);
+
+      } elseif ($event && preg_match('/#_SINGLE_EVENTPAGE_EVENTID/', $result)) {
+         // returns the event id of the single event page currently shown
+         if (eme_is_single_event_page())
+               $replacement = intval(get_query_var('event_id'));
 
       } elseif ($event && preg_match('/#_DAYS_TILL_START/', $result)) {
          $eme_date_obj = new ExpressiveDate($event['event_start_date']." ".$event['event_start_time'],$eme_timezone);

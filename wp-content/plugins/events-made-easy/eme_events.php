@@ -1246,7 +1246,8 @@ function eme_get_events_list($limit, $scope = "future", $order = "ASC", $format 
       } // end if (! empty ( $showperiod )) {
 
       //Add headers and footers to output
-      $output =  eme_replace_placeholders($format_header) .  $output . eme_replace_placeholders($format_footer);
+      $empty_event = eme_new_event();
+      $output =  eme_replace_placeholders($format_header, $empty_event) .  $output . eme_replace_placeholders($format_footer,$empty_event);
    } else {
       if (empty($no_events_message))
          $no_events_message=get_option('eme_no_events_message');

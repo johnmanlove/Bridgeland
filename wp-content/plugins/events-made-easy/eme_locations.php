@@ -225,7 +225,7 @@ function eme_locations_edit_layout($location, $message = "") {
                <?php _e('Location address', 'eme') ?>
             </h3>
             <div class="inside">
-            <input id="location_address" name="location_address" type="text" value="<?php echo eme_trans_sanitize_html($location['location_address']); ?>" size="40" />
+            <input id="location_address" name="location_address" type="text" value="<?php echo eme_sanitize_html($location['location_address']); ?>" size="40" />
             </div>
          </div>
  
@@ -234,7 +234,7 @@ function eme_locations_edit_layout($location, $message = "") {
                <?php _e('Location town', 'eme') ?>
             </h3>
             <div class="inside">
-            <input name="location_town" id="location_town" type="text" value="<?php echo eme_trans_sanitize_html($location['location_town']); ?>" size="40" />
+            <input name="location_town" id="location_town" type="text" value="<?php echo eme_sanitize_html($location['location_town']); ?>" size="40" />
             </div>
          </div>
                         

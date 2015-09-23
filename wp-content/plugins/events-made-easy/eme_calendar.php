@@ -116,11 +116,11 @@ function eme_get_calendar($args="") {
    $eme_date_obj->setDay(1);
    $eme_date_obj->setMonth($iSelectedMonth);
    $eme_date_obj->setYear($iSelectedYear);
-   // Get friendly month name
+   // Get friendly month name, but since DateTime::format doesn't respect the locale, we need eme_localised_date
    if ($full) {
-      list($sMonthName, $iDaysInMonth) = explode('-', $eme_date_obj->format('F-t'));
+      list($sMonthName, $iDaysInMonth) = explode('-', eme_localised_date($eme_date_obj->getDate(),'F-t'));
    } else {
-      list($sMonthName, $iDaysInMonth) = explode('-', $eme_date_obj->format('M-t'));
+      list($sMonthName, $iDaysInMonth) = explode('-', eme_localised_date($eme_date_obj->getDate(),'M-t'));
    }
    // take into account some locale info: some always best show full month name, some show month after year, some have a year suffix
    $locale_code = substr ( get_locale (), 0, 2 );
@@ -128,9 +128,9 @@ function eme_get_calendar($args="") {
    $yearSuffix="";
    switch($locale_code) { 
       case "hu": $showMonthAfterYear=1;break;
-      case "ja": $showMonthAfterYear=1;$sMonthName = $eme_date_obj->format('F');$yearSuffix="年";break;
-      case "ko": $showMonthAfterYear=1;$sMonthName = $eme_date_obj->format('F');$yearSuffix="년";break;
-      case "zh": $showMonthAfterYear=1;$sMonthName = $eme_date_obj->format('F');$yearSuffix="年";break;
+      case "ja": $showMonthAfterYear=1;$sMonthName = eme_localised_date($eme_date_obj->getDate(),'F');$yearSuffix="年";break;
+      case "ko": $showMonthAfterYear=1;$sMonthName = eme_localised_date($eme_date_obj->getDate(),'F');$yearSuffix="년";break;
+      case "zh": $showMonthAfterYear=1;$sMonthName = eme_localised_date($eme_date_obj->getDate(),'F');$yearSuffix="年";break;
    }
    if ($showMonthAfterYear)
          $cal_datestring="$iSelectedYear$yearSuffix $sMonthName";

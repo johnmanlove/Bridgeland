@@ -1324,7 +1324,7 @@ function eme_get_event_ids_by_booker_id($person_id) {
 }
 
 function eme_record_booking($event, $person_id, $seats, $seats_mp, $comment, $lang) {
-   global $wpdb;
+   global $wpdb, $plugin_page;
    $bookings_table = $wpdb->prefix.BOOKINGS_TBNAME;
    $person_id = intval($person_id);
    $seats = intval($seats);
@@ -1342,8 +1342,11 @@ function eme_record_booking($event, $person_id, $seats, $seats_mp, $comment, $la
    $booking['modif_date']=current_time('mysql', false);
    $booking['creation_date_gmt']=current_time('mysql', true);
    $booking['modif_date_gmt']=current_time('mysql', true);
-   // only if we're not adding a booking in the admin backend, check for approval needed
    if (!is_admin() && $event['registration_requires_approval']) {
+      // if we're adding a booking via the frontend, check for approval needed
+      $booking['booking_approved']=0;
+   } elseif (is_admin() && $event['registration_requires_approval'] && $plugin_page=='eme-registration-approval') {
+      // if we're adding a booking via the backend, check the page we came from to check for approval too
       $booking['booking_approved']=0;
    } else {
       $booking['booking_approved']=1;

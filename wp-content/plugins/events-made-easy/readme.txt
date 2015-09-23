@@ -4,7 +4,7 @@ Donate link: http://www.e-dynamics.be/wordpress
 Tags: events, manager, booking, calendar, gigs, concert, maps, geotagging, paypal, rsvp  
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 1.5.46
+Stable tag: 1.5.47
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,12 @@ Events list and calendars can be added to your blogs through widgets, shortcodes
 See the FAQ section at [the documentation site](http://www.e-dynamics.be/wordpress).
 
 == Changelog ==
+
+= 1.5.47 (2015/09/23) =
+* Feature: added event placeholder #_SINGLE_EVENTPAGE_EVENTID, returns the event id of the single event page currently shown
+* Improvement: add a class to the rsvp form submit button
+* Bugfix: when editing a location, don't translate fields that are multi-language compatible (otherwise you lose the other languages)
+* Bugfix: make sure the calendar monthname is localised again
 
 = 1.5.46 (2015/09/18) =
 * Feature: you can now also set the cancelled and denied mail format per event

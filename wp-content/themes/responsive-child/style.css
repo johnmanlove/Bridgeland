@@ -442,6 +442,49 @@ iframe {
     width: 100% !important; }
 
 /* ===================================================================================
+EVENTS STYLES
+=================================================================================== */
+.eme_events_list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .eme_events_list li {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0; }
+    .eme_events_list li span {
+      display: inline-block; }
+    .eme_events_list li .date {
+      border: 1px solid #ddd;
+      font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+      margin-right: 20px;
+      vertical-align: top; }
+      .eme_events_list li .date .month {
+        background-color: #8F6F5A;
+        color: white;
+        display: block;
+        padding: 10px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase; }
+      .eme_events_list li .date .day {
+        display: block;
+        text-align: center;
+        font-size: 25px;
+        padding: 10px 20px; }
+    .eme_events_list li .location {
+      width: 80%; }
+      .eme_events_list li .location h3, .eme_events_list li .location p {
+        font-size: 1em;
+        margin: 5px 0; }
+      .eme_events_list li .location > a {
+        color: #9E9B5B;
+        font-size: 1.8em;
+        font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+        transition: color .3s; }
+        .eme_events_list li .location > a:hover {
+          color: #8F6F5A; }
+
+/* ===================================================================================
 FOOTER STYLES
 =================================================================================== */
 #footer {
