@@ -350,8 +350,8 @@ HOMEPAGE STYLES
 				overflow: hidden;
 
 				.su-column-size-3-5 {
-					margin-bottom: -100em;
-					padding: 30px 30px 102em;
+					//margin-bottom: -100em;
+					padding: 30px 30px; //102em;
 
 					> .su-column-inner {
 						margin-left: -1500px;
@@ -362,7 +362,7 @@ HOMEPAGE STYLES
 
 				.su-column-size-2-5 {
 					@include bg-img(our-homes, jpg, no-repeat);
-					background-size: 100%;
+					background-size: cover;
 
 					.su-column-inner {
 						float: right;
@@ -398,8 +398,8 @@ HOMEPAGE STYLES
 				overflow: hidden;
 
 				.su-column-size-3-5 {
-					margin-bottom: -100em;
-					padding: 30px 30px 102em;
+					//margin-bottom: -100em;
+					padding: 30px 30px;// 102em;
 
 					> .su-column-inner {
 						margin-left: -1500px;
@@ -410,7 +410,8 @@ HOMEPAGE STYLES
 
 				.su-column-size-2-5 {
 					@include bg-img(our-lifestyle, jpg, no-repeat);
-					background-size: 100%;
+					background-size: cover;
+					min-height: 370px;
 
 					.su-column-inner {
 						float: right;
@@ -782,6 +783,17 @@ EVENTS STYLES
 			}
 		}
 
+	}
+}
+
+/* ===================================================================================
+BLOG STYLES
+=================================================================================== */
+
+.blog {
+
+	#wrapper {
+		padding: 0px 0 0 30px !important;
 	}
 }
 

@@ -205,15 +205,14 @@ HOMEPAGE STYLES
       background: #e9cf8f;
       overflow: hidden; }
       .home #wrapper #content-full .our-homes .su-column-size-3-5 {
-        margin-bottom: -100em;
-        padding: 30px 30px 102em; }
+        padding: 30px 30px; }
         .home #wrapper #content-full .our-homes .su-column-size-3-5 > .su-column-inner {
           margin-left: -1500px;
           margin-right: 1500px;
           transition: all 1500ms; }
       .home #wrapper #content-full .our-homes .su-column-size-2-5 {
         background: url("/Bridgeland/wp-content/uploads/2015/09/bg_our-homes.jpg") 0 0 no-repeat;
-        background-size: 100%; }
+        background-size: cover; }
         .home #wrapper #content-full .our-homes .su-column-size-2-5 .su-column-inner {
           float: right;
           text-align: center;
@@ -235,15 +234,15 @@ HOMEPAGE STYLES
       background: #9E9B5B;
       overflow: hidden; }
       .home #wrapper #content-full .our-lifestyle .su-column-size-3-5 {
-        margin-bottom: -100em;
-        padding: 30px 30px 102em; }
+        padding: 30px 30px; }
         .home #wrapper #content-full .our-lifestyle .su-column-size-3-5 > .su-column-inner {
           margin-left: -1500px;
           margin-right: 1500px;
           transition: all 2000ms; }
       .home #wrapper #content-full .our-lifestyle .su-column-size-2-5 {
         background: url("/Bridgeland/wp-content/uploads/2015/09/bg_our-lifestyle.jpg") 0 0 no-repeat;
-        background-size: 100%; }
+        background-size: cover;
+        min-height: 370px; }
         .home #wrapper #content-full .our-lifestyle .su-column-size-2-5 .su-column-inner {
           float: right;
           text-align: center;
@@ -483,6 +482,12 @@ EVENTS STYLES
         transition: color .3s; }
         .eme_events_list li .location > a:hover {
           color: #8F6F5A; }
+
+/* ===================================================================================
+BLOG STYLES
+=================================================================================== */
+.blog #wrapper {
+  padding: 0px 0 0 30px !important; }
 
 /* ===================================================================================
 FOOTER STYLES
