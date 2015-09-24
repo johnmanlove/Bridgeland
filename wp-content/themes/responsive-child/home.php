@@ -25,7 +25,7 @@ global $more;
 $more = 0;
 ?>
 
-<div id="banner-img" style="background-image: url(/Bridgeland/wp-content/uploads/2015/09/bridge-3.jpg); margin-left: -30px;"></div>
+<!--div id="banner-img" style="background-image: url(/Bridgeland/wp-content/uploads/2015/09/bridge-3.jpg); margin-left: -30px;"></div-->
 
 	<div id="content-blog" class="<?php echo esc_attr( implode( ' ', responsive_get_content_classes() ) ); ?>">
 
@@ -47,7 +47,11 @@ $more = 0;
 					<?php get_template_part( 'post-meta', get_post_type() ); ?>
 
 					<div class="post-entry">
-						
+						<?php if ( has_post_thumbnail() ) : ?>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+							<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) ); ?>
+						</a>
+						<?php endif; ?>
 						<?php the_content( __( 'Read more &#8250;', 'responsive' ) ); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="pagination">' . __( 'Pages:', 'responsive' ), 'after' => '</div>' ) ); ?>
 					</div>

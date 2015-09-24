@@ -642,6 +642,7 @@ INTERNAL PAGE STYLES
 =================================================================================== */
 
 #wrapper {
+	margin: 67px auto 0;
 	padding: 0px 0px 20px 0px !important;
 
 	#banner-img {
@@ -790,10 +791,35 @@ EVENTS STYLES
 BLOG STYLES
 =================================================================================== */
 
-.blog {
+.blog, .archive, .single {
 
 	#wrapper {
 		padding: 0px 0 0 30px !important;
+		
+		a {
+			color: $green;
+			transition: all .3s;
+			text-shadow: 0 0 #555;
+
+			&:hover {
+				color: #555;
+				text-shadow: 0 0 #888;
+			}
+		}
+
+		h2 {
+			line-height: 1.3em;
+
+		}
+
+		.post-meta {
+			font-family: $font-stack;
+			font-size: 1.2em;
+
+			.byline, .author, .comments-link {
+				display: none;
+			}
+		}
 	}
 }
 

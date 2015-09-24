@@ -113,5 +113,9 @@ if ( !defined( 'ABSPATH' ) ) {
 			<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 			<div id="banner-img" style="background-image: url('<?php echo $image[0]; ?>')"></div>
 		<?php endif; ?>
+		<!--?php
+			$page_for_posts = get_option('page_for_posts');
+			echo get_the_post_thumbnail($page_for_posts);
+		?-->
 <?php responsive_wrapper_top(); // before wrapper content hook ?>
 <?php responsive_in_wrapper(); // wrapper hook ?>

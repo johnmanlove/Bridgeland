@@ -385,6 +385,7 @@ LAYOUT STYLES
 INTERNAL PAGE STYLES
 =================================================================================== */
 #wrapper {
+  margin: 67px auto 0;
   padding: 0px 0px 20px 0px !important; }
   #wrapper #banner-img {
     background-size: 100%;
@@ -486,8 +487,22 @@ EVENTS STYLES
 /* ===================================================================================
 BLOG STYLES
 =================================================================================== */
-.blog #wrapper {
+.blog #wrapper, .archive #wrapper, .single #wrapper {
   padding: 0px 0 0 30px !important; }
+  .blog #wrapper a, .archive #wrapper a, .single #wrapper a {
+    color: #9E9B5B;
+    transition: all .3s;
+    text-shadow: 0 0 #555; }
+    .blog #wrapper a:hover, .archive #wrapper a:hover, .single #wrapper a:hover {
+      color: #555;
+      text-shadow: 0 0 #888; }
+  .blog #wrapper h2, .archive #wrapper h2, .single #wrapper h2 {
+    line-height: 1.3em; }
+  .blog #wrapper .post-meta, .archive #wrapper .post-meta, .single #wrapper .post-meta {
+    font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-size: 1.2em; }
+    .blog #wrapper .post-meta .byline, .blog #wrapper .post-meta .author, .blog #wrapper .post-meta .comments-link, .archive #wrapper .post-meta .byline, .archive #wrapper .post-meta .author, .archive #wrapper .post-meta .comments-link, .single #wrapper .post-meta .byline, .single #wrapper .post-meta .author, .single #wrapper .post-meta .comments-link {
+      display: none; }
 
 /* ===================================================================================
 FOOTER STYLES
