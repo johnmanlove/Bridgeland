@@ -661,6 +661,58 @@ INTERNAL PAGE STYLES
 			margin-top: 0;
 		}
 	}
+
+	.wpcf7-form {
+
+		fieldset {
+			border: 0 none;
+			border-bottom: 1px dashed #ccc;
+			margin: 0;
+			padding: 0 0 20px 0;
+
+			p {
+				float: left;
+				margin: 10px 0;
+				padding-right: 3%;
+				text-transform: uppercase;
+				width: 47%;
+
+				input, select {
+					border: 1px solid $green;
+					border-radius: 0 !important;
+					display: block;
+					box-shadow: none;
+					width: 100%;
+
+					&:active, &:focus {
+						border-color: #999;
+						outline: none;
+						box-shadow: 0 0 10px #ccc;
+					}
+				}
+
+				select {
+					appearance: none;
+					-webkit-appearance: none;
+					padding: 6px 8px;
+				}
+			}
+		}
+
+		textarea {
+			border: 1px solid $green;
+			border-radius: 0 !important;
+			display: block;
+			box-shadow: none;
+			width: 91%;
+
+			&:active, &:focus {
+				border-color: #999;
+				outline: none;
+				box-shadow: 0 0 10px #ccc;
+			}
+		}
+	}
 }
 
 .widget-wrapper {
@@ -675,6 +727,10 @@ INTERNAL PAGE STYLES
 iframe {
 	min-height: 900px;
 	width: 100%;
+
+	&.contact-page {
+		min-height: 250px;
+	}
 }
 
 .su-tabs {
@@ -818,6 +874,21 @@ BLOG STYLES
 
 			.byline, .author, .comments-link {
 				display: none;
+			}
+		}
+
+		.wp-smart-pagination {
+
+			.wpsp-page-nav {
+
+				a {
+					color: #444;
+					text-shadow: none;
+				}
+			}
+
+			.wpsp-page-nav-form {
+				margin: 0 0 0 15px !important;
 			}
 		}
 	}

@@ -396,6 +396,41 @@ INTERNAL PAGE STYLES
     padding-right: 10px; }
     #wrapper #widgets.fit > div:first-of-type {
       margin-top: 0; }
+  #wrapper .wpcf7-form fieldset {
+    border: 0 none;
+    border-bottom: 1px dashed #ccc;
+    margin: 0;
+    padding: 0 0 20px 0; }
+    #wrapper .wpcf7-form fieldset p {
+      float: left;
+      margin: 10px 0;
+      padding-right: 3%;
+      text-transform: uppercase;
+      width: 47%; }
+      #wrapper .wpcf7-form fieldset p input, #wrapper .wpcf7-form fieldset p select {
+        border: 1px solid #9E9B5B;
+        border-radius: 0 !important;
+        display: block;
+        box-shadow: none;
+        width: 100%; }
+        #wrapper .wpcf7-form fieldset p input:active, #wrapper .wpcf7-form fieldset p input:focus, #wrapper .wpcf7-form fieldset p select:active, #wrapper .wpcf7-form fieldset p select:focus {
+          border-color: #999;
+          outline: none;
+          box-shadow: 0 0 10px #ccc; }
+      #wrapper .wpcf7-form fieldset p select {
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 6px 8px; }
+  #wrapper .wpcf7-form textarea {
+    border: 1px solid #9E9B5B;
+    border-radius: 0 !important;
+    display: block;
+    box-shadow: none;
+    width: 91%; }
+    #wrapper .wpcf7-form textarea:active, #wrapper .wpcf7-form textarea:focus {
+      border-color: #999;
+      outline: none;
+      box-shadow: 0 0 10px #ccc; }
 
 .widget-wrapper {
   background: none;
@@ -407,6 +442,8 @@ INTERNAL PAGE STYLES
 iframe {
   min-height: 900px;
   width: 100%; }
+  iframe.contact-page {
+    min-height: 250px; }
 
 .su-tabs {
   background: none !important;
@@ -503,6 +540,11 @@ BLOG STYLES
     font-size: 1.2em; }
     .blog #wrapper .post-meta .byline, .blog #wrapper .post-meta .author, .blog #wrapper .post-meta .comments-link, .archive #wrapper .post-meta .byline, .archive #wrapper .post-meta .author, .archive #wrapper .post-meta .comments-link, .single #wrapper .post-meta .byline, .single #wrapper .post-meta .author, .single #wrapper .post-meta .comments-link {
       display: none; }
+  .blog #wrapper .wp-smart-pagination .wpsp-page-nav a, .archive #wrapper .wp-smart-pagination .wpsp-page-nav a, .single #wrapper .wp-smart-pagination .wpsp-page-nav a {
+    color: #444;
+    text-shadow: none; }
+  .blog #wrapper .wp-smart-pagination .wpsp-page-nav-form, .archive #wrapper .wp-smart-pagination .wpsp-page-nav-form, .single #wrapper .wp-smart-pagination .wpsp-page-nav-form {
+    margin: 0 0 0 15px !important; }
 
 /* ===================================================================================
 FOOTER STYLES
