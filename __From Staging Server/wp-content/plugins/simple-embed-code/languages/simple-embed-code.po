@@ -1,0 +1,223 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Code Embed\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-08 17:18-0000\n"
+"PO-Revision-Date: 2015-09-08 17:18-0000\n"
+"Last-Translator: David Artiss <david.artiss@artiss.co.uk>\n"
+"Language-Team: \n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_x;"
+"_ex;esc_attr_x;esc_html_x;_n;_nx;_n_noop;_nx_noop\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.7.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/ace-admin-config.php:29
+msgid "Settings"
+msgstr ""
+
+#: includes/ace-admin-config.php:53
+msgid "Support"
+msgstr ""
+
+#: includes/ace-admin-config.php:54
+msgid "Donate"
+msgstr ""
+
+#: includes/ace-admin-config.php:77 includes/ace-search.php:18
+msgid "Code Embed Search"
+msgstr ""
+
+#: includes/ace-admin-config.php:77
+msgid "Code Search"
+msgstr ""
+
+#: includes/ace-admin-config.php:85
+msgid "Code Embed Settings"
+msgstr ""
+
+#: includes/ace-admin-config.php:85
+msgid "Code Embed"
+msgstr ""
+
+#: includes/ace-admin-config.php:109 includes/ace-admin-config.php:129
+msgid "Help"
+msgstr ""
+
+#: includes/ace-admin-config.php:172
+msgid ""
+"Use this screen to modify the various settings, including the identifiers "
+"and keyword used to specify your embedded code."
+msgstr ""
+
+#: includes/ace-admin-config.php:173
+msgid ""
+"The first option allows to suppress debug output. Normally this is an HTML "
+"comment in your page source - if you wish to hide this then simply ticket "
+"this option."
+msgstr ""
+
+#: includes/ace-admin-config.php:174
+msgid ""
+"The keyword is the name used for your custom field. The custom field's value "
+"is the code that you wish to embed."
+msgstr ""
+
+#: includes/ace-admin-config.php:175
+msgid ""
+"The keyword, sandwiched with the identifier before and after, is what you "
+"then need to add to your post or page to activate the embed code."
+msgstr ""
+
+#: includes/ace-admin-config.php:176
+#, php-format
+msgid "You are using Code Embed version %s. It was written by David Artiss."
+msgstr ""
+
+#: includes/ace-admin-config.php:194
+msgid ""
+"This screen allows you to search for the post and pages that a particular "
+"code embed has been used in."
+msgstr ""
+
+#: includes/ace-admin-config.php:195
+msgid ""
+"Simply enter the code suffix that you wish to search for and press the "
+"'Search' key to display a list of all the posts using it. In addition the "
+"code will be shown alongside it. Click on the post name to edit the post."
+msgstr ""
+
+#: includes/ace-admin-config.php:196
+msgid ""
+"The search results are grouped together in matching code groups, so posts "
+"with the same code will be shown together with the same colour background."
+msgstr ""
+
+#: includes/ace-filter.php:234
+#, php-format
+msgid ""
+"Cannot use %s as a global code as it is being used to store %d unique pieces "
+"of code in %d posts - <a href=\"%s\">click here</a> for more details"
+msgstr ""
+
+#: includes/ace-filter.php:241
+#, php-format
+msgid "No embed code was found for %s"
+msgstr ""
+
+#: includes/ace-options.php:19
+msgid "Code Embed Options"
+msgstr ""
+
+#: includes/ace-options.php:46
+msgid "Hide Debug"
+msgstr ""
+
+#: includes/ace-options.php:47
+msgid "Hide debug HTML comments in source."
+msgstr ""
+
+#: includes/ace-options.php:51
+msgid "Identifier Format"
+msgstr ""
+
+#: includes/ace-options.php:51
+msgid ""
+"Specify the format that will be used to define the way the code is embedded "
+"in your post. The formats are case insensitive and characters &lt; &gt [ ] "
+"are invalid."
+msgstr ""
+
+#: includes/ace-options.php:56
+msgid "Keyword"
+msgstr ""
+
+#: includes/ace-options.php:57
+msgid ""
+"The keyword that is used to name the custom field and then place in your "
+"post where the code should be embedded. A suffix on any type can then be "
+"placed on the end."
+msgstr ""
+
+#: includes/ace-options.php:61
+msgid "Opening Identifier"
+msgstr ""
+
+#: includes/ace-options.php:62
+msgid ""
+"The character(s) that must be placed in the post before the keyword to "
+"uniquely identify it."
+msgstr ""
+
+#: includes/ace-options.php:66
+msgid "Closing Identifier"
+msgstr ""
+
+#: includes/ace-options.php:67
+msgid ""
+"The character(s) that must be placed in the post after the keyword to "
+"uniquely identify it."
+msgstr ""
+
+#: includes/ace-options.php:74
+msgid "Save Settings"
+msgstr ""
+
+#: includes/ace-options.php:82
+msgid "How to Embed"
+msgstr ""
+
+#: includes/ace-options.php:83
+#, php-format
+msgid ""
+"Based upon your current settings to embed some code simply add a custom "
+"field named %s, where %s is any suffix you wish. The code to embed is then "
+"added as the field value."
+msgstr ""
+
+#: includes/ace-options.php:84
+#, php-format
+msgid ""
+"Then, to add the code into your post simple add %s where you wish it to "
+"appear. %s is the suffix you used for the custom field name."
+msgstr ""
+
+#: includes/ace-options.php:85
+#, php-format
+msgid ""
+"For example, I may add a custom field named %s, where the value is the code "
+"I wish to embed. I would then in my post add %s where I wish the code to "
+"then appear."
+msgstr ""
+
+#: includes/ace-options.php:86
+#, php-format
+msgid ""
+"To embed the same code but to make it responsive you would use %s. To set a "
+"maximum width you would use %s, where %s is the maximum width in pixels."
+msgstr ""
+
+#: includes/ace-options.php:87
+#, php-format
+msgid "To embed an external URL you would type %s, where %s is the URL."
+msgstr ""
+
+#: includes/ace-search.php:21
+msgid ""
+"Enter the suffix to search for below and press the 'Search' button to view "
+"the results. Further help can be found by clicking on the Help tab at the "
+"top right-hand of the screen."
+msgstr ""
+
+#: includes/ace-search.php:50
+msgid "Search"
+msgstr ""
+
+#: includes/ace-search.php:90
+msgid "No posts were found containing that embed code."
+msgstr ""

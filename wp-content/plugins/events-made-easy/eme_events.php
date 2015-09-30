@@ -437,7 +437,6 @@ function eme_events_page() {
                 (current_user_can( get_option('eme_cap_author_event')) && ($tmp_recurrence['event_author']==$current_userid || $tmp_recurrence['event_contactperson_id']==$current_userid))) {
                // UPDATE old recurrence
                $recurrence['recurrence_id'] = $recurrence_ID;
-               //print_r($recurrence); 
                if (eme_db_update_recurrence ($event, $recurrence )) {
                   $feedback_message = __ ( 'Recurrence updated!', 'eme' );
                   //if (has_action('eme_update_event_action')) do_action('eme_update_event_action',$event);
@@ -1394,11 +1393,19 @@ function eme_count_events_newer_than($scope) {
 }
 
 // main function querying the database event table
-function eme_get_events($o_limit, $scope = "future", $order = "ASC", $o_offset = 0, $location_id = "", $category = "", $author = "", $contact_person = "",  $show_ongoing=1, $notcategory = "", $show_recurrent_events_once=0, $extra_conditions = "") {
+function eme_get_events($o_limit=0, $scope = "future", $order = "ASC", $o_offset = 0, $location_id = "", $category = "", $author = "", $contact_person = "",  $show_ongoing=1, $notcategory = "", $show_recurrent_events_once=0, $extra_conditions = "") {
    global $wpdb, $eme_timezone;
 
    $events_table = $wpdb->prefix.EVENTS_TBNAME;
    $bookings_table = $wpdb->prefix.BOOKINGS_TBNAME;
+
+   if (strpos ( $o_limit, "=" )) {
+      // allows the use of arguments
+      $defaults = array ('o_limit' => 0, 'scope' => 'future', 'order' => 'ASC', 'o_offset' => 0, 'location_id' => '', 'category' => '', 'author' => '', 'contact_person' => '', 'show_ongoing'=>1, 'notcategory' => '', 'show_recurrent_events_once'=>0, 'extra_conditions' => '' );
+      
+      $r = wp_parse_args ( $o_limit, $defaults );
+      extract ( $r );
+   }
    if ($o_limit === "") {
       $o_limit = get_option('eme_event_list_number_items' );
    }

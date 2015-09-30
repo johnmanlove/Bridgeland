@@ -1,0 +1,5 @@
+[28-Sep-2015 20:56:37 UTC] PHP Catchable fatal error:  Object of class WP_Error could not be converted to string in /home4/cweigand/public_html/bridgeland/wp-content/themes/responsive/core/includes/functions-extentions.php on line 123
+[28-Sep-2015 20:57:12 UTC] PHP Catchable fatal error:  Object of class WP_Error could not be converted to string in /home4/cweigand/public_html/bridgeland/wp-content/themes/responsive/core/includes/functions-extentions.php on line 123
+[28-Sep-2015 20:57:16 UTC] PHP Catchable fatal error:  Object of class WP_Error could not be converted to string in /home4/cweigand/public_html/bridgeland/wp-content/themes/responsive/core/includes/functions-extentions.php on line 123
+[28-Sep-2015 21:03:33 UTC] PHP Catchable fatal error:  Object of class WP_Error could not be converted to string in /home4/cweigand/public_html/bridgeland/wp-content/themes/responsive/core/includes/functions-extentions.php on line 123
+[28-Sep-2015 21:26:45 UTC] PHP Catchable fatal error:  Object of class WP_Error could not be converted to string in /home4/cweigand/public_html/bridgeland/wp-content/themes/responsive/core/includes/functions-extentions.php on line 123

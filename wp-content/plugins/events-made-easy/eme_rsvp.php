@@ -1488,6 +1488,13 @@ function eme_transfer_all_bookings($person_id,$to_person_id) {
    else return true;
 }
 
+function eme_move_booking_event($booking_id,$event_id) {
+   global $wpdb;
+   $bookings_table = $wpdb->prefix.BOOKINGS_TBNAME; 
+   $sql = $wpdb->prepare("UPDATE $bookings_table SET event_id = %d WHERE booking_id = %d",$event_id,$booking_id);
+   return $wpdb->query($sql);
+}
+
 function eme_delete_booking($booking_id) {
    global $wpdb;
    $bookings_table = $wpdb->prefix.BOOKINGS_TBNAME; 
@@ -2427,7 +2434,7 @@ function eme_registration_approval_page() {
 }
 
 function eme_registration_seats_page($pending=0) {
-   global $wpdb,$plugin_page;
+   global $wpdb,$plugin_page,$eme_timezone;
 
    // do the actions if required
    if (isset($_GET['eme_admin_action']) && $_GET['eme_admin_action'] == "editRegistration" && isset($_GET['booking_id'])) {
@@ -2439,6 +2446,19 @@ function eme_registration_seats_page($pending=0) {
       $action_url = admin_url("admin.php?page=$plugin_page");
       $ret_string = "<form id='eme-rsvp-form' name='booking-form' method='post' action='$action_url'>";
       $ret_string.= __('Send mails for changed registration?','eme') . eme_ui_select_binary(1,"send_mail");
+      $all_events = eme_get_events("extra_conditions=".urlencode("event_rsvp=1 AND event_id!=$event_id"));
+      if (count($all_events)>0) {
+         $ret_string.= "<br />".__('Move booking to event','eme');
+         $ret_string.= " <select name='event_id'>";
+         $ret_string.=  "<option value='0' ></option>";
+         foreach ( $all_events as $this_event ) {
+            if ($this_event ['event_rsvp']) {
+               $option_text=$this_event['event_name']." (".eme_localised_date($this_event['event_start_date']." ".$this_event['event_start_time']." ".$eme_timezone).")";
+               $ret_string.=  "<option value='".$this_event['event_id']."' >".$option_text."</option>";
+            }
+         }
+         $ret_string .= "</select>";
+      }
       $ret_string.= eme_replace_formfields_placeholders ($event,$booking);
       $ret_string .= "
          <input type='hidden' name='eme_admin_action' value='updateRegistration' />
@@ -2462,7 +2482,6 @@ function eme_registration_seats_page($pending=0) {
             </form>";
          print $ret_string;
          return;
-
       } elseif ($action == 'addRegistration') {
          $event_id = intval($_POST['event_id']);
          $booking_payed = isset($_POST ['booking_payed']) ? intval($_POST ['booking_payed']) : 0;
@@ -2478,6 +2497,9 @@ function eme_registration_seats_page($pending=0) {
          }
       } elseif ($action == 'updateRegistration') {
          $booking_id = intval($_POST['booking_id']);
+         $event_id = isset($_POST ['event_id']) ? intval($_POST ['event_id']) : 0;
+         if ($event_id)
+            eme_move_booking_event($booking_id,$event_id);
          $booking = eme_get_booking ($booking_id);
 
          if (isset($_POST['comment']))

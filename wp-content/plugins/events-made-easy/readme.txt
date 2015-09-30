@@ -4,7 +4,7 @@ Donate link: http://www.e-dynamics.be/wordpress
 Tags: events, manager, booking, calendar, gigs, concert, maps, geotagging, paypal, rsvp  
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 1.5.47
+Stable tag: 1.5.48
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,10 @@ Events list and calendars can be added to your blogs through widgets, shortcodes
 See the FAQ section at [the documentation site](http://www.e-dynamics.be/wordpress).
 
 == Changelog ==
+
+= 1.5.48 (2015/09/26) =
+* Feature: you can now move a booking to another event (when updating the booking)
+* Bugfix: when editing a recurrence, the end-days per individual event were set at the end date of the recurrence instead of the correct event end date
 
 = 1.5.47 (2015/09/23) =
 * Feature: added event placeholder #_SINGLE_EVENTPAGE_EVENTID, returns the event id of the single event page currently shown
